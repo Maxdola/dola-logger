@@ -1,0 +1,35 @@
+{
+  "name": "dola-logger",
+  "version": "1.0.0",
+  "description": "A custom Logging Package with loggers and logergroups",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxdola/dola-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "logggergroup",
+    "dola"
+  ],
+  "author": "Maxdola <Max Hardtke>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxdola/dola-logger/issues"
+  },
+  "homepage": "https://github.com/Maxdola/dola-logger#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "moment": "^2.24.0",
+    "strip-ansi": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^13.13.4"
+  }
+}
