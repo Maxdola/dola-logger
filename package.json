@@ -1,9 +1,10 @@
 {
   "name": "dola-logger",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A custom Logging Package with loggers and logergroups",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": ["dist/**"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
