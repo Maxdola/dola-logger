@@ -1,6 +1,6 @@
 {
   "name": "dola-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom Logging Package with loggers and logergroups",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
