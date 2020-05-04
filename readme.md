@@ -12,9 +12,10 @@ $ npm install dola-logger
 ````js
 const group = new LoggerGroup("System");
 const logger = group.createLogger("main");
+const logger = new Logger("logger without Group")
 ````
 
-### Basic
+### Advanced
 ```js
 //Create a logger group
 new LoggerGroup("System");            //new Logger group
@@ -35,7 +36,19 @@ new Logger("logger without Group")
 // => 'logger without '
 ```
 
-### With Options
+## Logging itself
+###Code
+```js
+logger.debug("String:", "Hello npm");
+logger.info("Number: ", 1337);
+logger.info("Numbers: ", 1, 3 ,3 ,7);
+logger.warn("Array: ", [1,3,3,7]);
+logger.error("Object: ", {a: "b", d: {c: "e"}});
+```
+### Output
+![Image of the output](https://i.imgur.com/iPyOkty.png "The output from in the console with the code above.")
+
+## Option Types
 ```ts
 type options = {
     saveOnExit?: boolean,
