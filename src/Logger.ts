@@ -31,7 +31,7 @@ export default class Logger {
         return this._name;
     }
 
-    constructor(private _name : string, private groupPrefix?: string | GroupPrefixOptions, private loggerOptions? : LoggerOptions) {
+    constructor(private _name : string, private groupPrefix?: string | GroupPrefixOptions, private loggerOptions? : LoggerOptions & {groupSave?: boolean}) {
         this.startTime = Date.now();
         this.messagePrefix = this.formatMessagePrefix();
 
@@ -137,9 +137,13 @@ export default class Logger {
         return new Log(message, logLevel, this.messagePrefix);
     }
 
+    clearStack() {
+        this._logs.splice(0, this._logs.length);
+    }
+
     log(message : any, logLevel = <LogLevel> "INFO") : void {
         const log = this.createLog(message, logLevel);
-        this._logs.push(log);
+        if (this.loggerOptions.savePeriodically || this.loggerOptions.saveOnExit || this.loggerOptions.groupSave) this._logs.push(log);
         console.log(log.formattedMessage);
     }
 

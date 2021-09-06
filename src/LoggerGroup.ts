@@ -47,7 +47,7 @@ export default class LoggerGroup {
     }
 
     createLogger(name : string, loggerOptions? : LoggerOptions) : Logger {
-        const logger = new Logger(name, this.loggerOptions.color ? {value: this.name, color: this.loggerOptions.color} : this.name, loggerOptions);
+        const logger = new Logger(name, this.loggerOptions.color ? {value: this.name, color: this.loggerOptions.color} : this.name, {...loggerOptions, groupSave: this.loggerOptions.saveOnExit || this.loggerOptions.savePeriodically});
         this.loggers.push(logger);
         return logger;
     }
@@ -61,7 +61,7 @@ export default class LoggerGroup {
         if (logger) {
             return logger;
         }
-        logger = new Logger(name, this.loggerOptions.color ? {value: this.name, color: this.loggerOptions.color} : this.name);
+        logger = new Logger(name, this.loggerOptions.color ? {value: this.name, color: this.loggerOptions.color} : this.name, {groupSave: this.loggerOptions.saveOnExit || this.loggerOptions.savePeriodically});
         this.loggers.push(logger);
         return logger;
     }
